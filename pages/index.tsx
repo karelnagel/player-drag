@@ -141,7 +141,6 @@ const Home: NextPage = () => {
                     style={{ width: `${(progress ?? 0) * 100}%` }}
                   ></div>
                 </div>
-                <p>Price: {price}</p>
                 {status !== "rendering" && (
                   <div className="text-green-500 space-x-4 uppercase">
                     <a href={url} target="_blank" rel="noreferrer" className="">

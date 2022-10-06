@@ -1,16 +1,25 @@
 import { useContext, useState } from "react";
 import Draggable from "react-draggable";
 import { Rnd } from "react-rnd";
-import { AbsoluteFill, Img } from "remotion";
+import { AbsoluteFill, Img, useCurrentFrame, useVideoConfig } from "remotion";
 import { ElementContext } from "../../pages";
 import { Element, Props } from "../../types/MyComp";
 
 export const MyComposition = ({ elements }: Props) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+
   return (
     <AbsoluteFill className="relative h-full w-full bg-green-200">
       {elements.map((element, index) => (
         <OneElement key={index} element={element} />
       ))}
+      <div className="absolute bottom-0 w-full h-10">
+        <div
+          style={{ width: `${(frame / durationInFrames) * 100}%` }}
+          className="h-full bg-red-400"
+        ></div>
+      </div>
     </AbsoluteFill>
   );
 };
