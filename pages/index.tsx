@@ -157,9 +157,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="relative h-96 w-96 overflow-hidden bg-red-300 m-10">
-        <OneElement element={props.elements[0]} />
-      </div>
+     
     </ElementContext.Provider>
   );
 };

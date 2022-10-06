@@ -48,8 +48,8 @@ export const defaultProps: Props = {
             },
             width: 500,
             height: 500,
-            x: 300,
-            y: 400
+            x: 500,
+            y: 700
         }
     ]
 }
